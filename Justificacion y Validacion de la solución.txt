@@ -1,0 +1,6 @@
+JUSIFICACIÓN Y VALIDACIÓN DE LA SOLCUCIÓN 
+
+En primer lugar, siento que un problema al emprender es tener un orden sobre el inventario, nuevos productos, ventas o algún costo extra, por eso diseñe este programa que busca solventar este problema. Su funcionamiento es simple inicialmente se tienen que agregar los productos nuevos con su precio y cantidad, luego se les asigna un precio de venta y finalmente ya se genera la venta. En caso de que un producto quiera ser suministrado, existe la opción donde solo con el ID y la cantidad ya se agregaría al inventario. Aparte cree una opción por si existe algún percance o costo extra, se pueda agregar este valor para tener una mejor perspectiva del balance del negocio.
+
+Finalmente esta la opción para imprimir los gastos y las ventas que se generen dentro del negocio y con esto sacar el balance actual del emprendimiento.
+
