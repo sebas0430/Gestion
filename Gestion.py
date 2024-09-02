@@ -1,3 +1,4 @@
+# Creo una clase para los productos que se comparan 
 class ProductoCompra:
     def __init__(self, id, nombre, precioCompra, cantidad):
         self.id = id
@@ -8,7 +9,7 @@ class ProductoCompra:
     def imprimir(self):
         return f'ID: {self.id} \n NOMBRE: {self.nombre} \n PRECIO: {self.precioCompra}$ \n CANTIDAD: {self.cantidad}'
 
-
+#creo una clase para los productos que estan a la venta
 class ProductoVenta:
     def __init__(self, id, nombre, precioVenta):
         self.id = id
@@ -18,12 +19,16 @@ class ProductoVenta:
     def imprimir(self):
         return f'ID: {self.id} \n NOMBRE: {self.nombre} \n PRECIO: {self.precioVenta}$'
 
-
+#lista de productos comprados
 productos = []
+#lista de productos a la venta
 productosVenta = []
+#total de gastos 
 TotalGastos = 0
+#total de las ventas realizadas
 TotalVentas = 0
 
+#Esta funcion es para cuando se desea adquirir un producto nuevo
 def CompraProductoNuevo(id, nombre, precioCompra, cantidad):
     global TotalGastos
     pro = ProductoCompra(id, nombre, precioCompra, cantidad)
@@ -31,7 +36,7 @@ def CompraProductoNuevo(id, nombre, precioCompra, cantidad):
     TotalGastos += precioCompra * cantidad  # Actualizar TotalGastos correctamente
     print("Ya fue agregado el producto")
 
-
+#Esta funcion es para renovar el inventario de algun producto ya dentro 
 def CompraProductoAntiguo(id, cantidad):
     global TotalGastos
     for producto in productos:
@@ -42,7 +47,7 @@ def CompraProductoAntiguo(id, cantidad):
             return
     print("No se encontró el producto.")
 
-
+#Esta funcion es para asignarle un precio a los productos
 def AsignarPrecioVenta(id, precioVenta):
     for producto in productos:
         if producto.id == id:
@@ -53,7 +58,7 @@ def AsignarPrecioVenta(id, precioVenta):
             return
     print("No se encontró el producto para asignar precio de venta.")
 
-
+#Esta funcion es para realizar la venta
 def VentaProducto():
     global TotalVentas
     if not productos:
@@ -82,12 +87,12 @@ def VentaProducto():
                 return
     print("No se encontró el producto para la venta.")
 
-
+#Esta funcion es para ver los porductos disponibles 
 def VerProductos(productos):
     for producto in productos:
         print(producto.imprimir())
 
-
+#Esta funcion es para ver los porductos disponibles para vender
 def VerProductosVenta(productosVenta):
     for producto in productosVenta:
         print(producto.imprimir())
@@ -96,14 +101,21 @@ def VerProductosVenta(productosVenta):
 # Menú de opciones
 opc = 1
 while opc != "0":
+    #Para comprar productos para el negocio
     print("1. Compra Producto")
+    #Asignar los precios de venta a ese producto
     print("2. Asignar Precios de venta")
+    #realizar la venta
     print("3. Venta Producto")
+    #Ver inventario 
     print("4. Ver Productos Disponibles")
+    #ver productos disponibles para vender
     print("5. Ver Productos a la venta")
+    #informe de las ventas
     print("6. Info de ventas")
+    #En caso de que se tenga algun costo extra se agrega por este medio
     print("7. Agregar Costos Extra")
-    print("8. IA recomendaciones")
+    #salir del programa
     print("0. SALIR")
     opc = input('Ingrese una opción: ')
 
